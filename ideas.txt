@@ -1,0 +1,3 @@
+Welcome page that redirects to colorful transition that has info
+about chemistry and dynamic website that changes as you scroll
+with animations and what not

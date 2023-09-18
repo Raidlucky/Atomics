@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /* Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /* Kanit Font */
+
+body {
+    box-sizing: border-box;
+    font-family: 'arial';
+    margin: 0px;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 100%;
+}
+
+.testCanvas {
+    justify-self: unset;
+    position: absolute;
+    width: 99.9%;
+    height: 99.8%;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    border: none;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn {
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    padding: 8px;
+    width: 100px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #33333394;
+}
+
+.mainHeader {
+    font-family: "Kanit";
+    font-style: italic;
+    font-size: 60px;
+    color: #222222;
+}
+
+.mainHeader::selection {
+    background-color: none;
+    color: none;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    background-color: #222222;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar > a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'roboto';
+    margin-inline: 10px;
+    border-radius: 10px;
+}
+
+.sidebar > a:hover {
+background-color: #474747;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 230px;
+}
+
+.subSide {
+    color: #c9c9c9;
+    font-weight: 600;
+    padding: 10px;
+    margin-block: 10px;
+    margin-inline: 10px;
+}
+
+.tablehold {
+    display: flex;
+    justify-content: center;
+}
+
+.table1 {
+    display: flex;
+    flex-flow: wrap-reverse;
+    flex-direction: row;
+    width: 138px;
+    flex-direction: row;
+}
+
+.ele {
+    font-size: 9px;
+    text-align: center;
+    padding: 7px;
+    width: 65px;
+    height: 65px;
+    bottom: 0;
+    border: solid 2px #333;
+    background-color: #33333375;
+    margin: 2px;
+    border-radius: 6px;
+    color: #fff;
+    transition: 0.3s ease all;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-family: 'Roboto';
+}
+
+.ele:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.ele > h5 {
+    margin-block: 3px;
+    font-size: 16px;
+}
+
+.eleRow {
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
+}
+
+.eleRow > p {
+    display: inline-block;
+    margin-inline: 0px;
+    margin-block: 0px;
+    width: 28px;
+}
+
+.atomicN {
+    text-align: left;
+    float: left;
+}
+
+.atomicM {
+    text-align: right;
+    float: right;
+}
+
+.alkaliM {
+    color: #d8f8ff;
+    background-color: #244d57c2;
+    border: solid 2px #244d57;
+}
+
+.alkalineEM {
+    color: #ffe7e7;
+    background-color: #622e39bd;
+    border: solid 2px #622e39;
+}
+
+.reactiveN {
+    color: #e2eeff;
+    background-color: #2a4165b6;
+    border: solid 2px #2a4165;
+}
+
+.transitionM {
+    border: solid 2px #433c65;
+    background-color: #433c65bb;
+    color: #f3e8fd;
+}
+
+.Lanth {
+    border: solid 2px #004a77;
+    background-color: #004977b0;
+    color: #d8f8ff;
+}
+
+.Acti {
+    border: solid 2px #613b28;
+    background-color: #613b28b9;
+    color: #ffe6d4;
+}
+
+.Unknown {
+    color: #e7e7ea;
+    border: solid 2px #46474c;
+    background-color: #46474cb9;
+}
+
+.Metalloids {
+    color: #fef7e0;
+    border: solid 2px #523e1b;
+    background-color: #523e1bb2;
+}
+
+.postTran {
+    color: #d6f9e8;
+    border: solid 2px #2f4d47;
+    background-color: #2f4d47a4;
+}
+
+.themeBtn {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    width: 120px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.table2 {
+    display: flex;
+    flex-flow: column-reverse;
+}
