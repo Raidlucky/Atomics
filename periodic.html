@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Periodic</title>
+    <title>Periodic Table</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body style="background-color: #1a1a1a;" id="body">
-    <div class="sidebar">
-        <a style="margin-top: 10px;" href="./index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <p class="subSide">PERIODIC TABLE</p>
-        <a href="#"><i class="fa-solid fa-atom"></i> Periodic Table</a>
-        <a href=""><i class="fa-solid fa-circle-info"></i> Info</a>
-        <a href=""><i class="fa-solid fa-book"></i> History</a>
+    <div id="sidebar" class="sidebar">
+        <a id="home" style="margin-top: 10px;" href="./index.html"><i class="fa-solid fa-house"></i> <p style="margin: 0px; margin-left: 10px;">Home</p></a>
+        <p id="subside" class="subSide">PERIODIC TABLE</p>
+        <a id="table" href="#"><i class="fa-solid fa-atom"></i> <p style="margin: 0px; margin-left: 10px;">Periodic Table</p></a>
+        <a id="info" href=""><i class="fa-solid fa-circle-info"></i> <p style="margin: 0px; margin-left: 10px;">Info</p></a>
+        <a id="history" href=""><i class="fa-solid fa-landmark-dome"></i> <p style="margin: 0px; margin-left: 10px;">History</p></a>
+        <button style="width: 220px;" id="minimize" onclick="mini()"><i class="fa-regular fa-circle-xmark"></i> <p style="margin: 0px; margin-left: 10px;">Close</p></button>
+        <button style="display: none; width: 40px;" id="expand" onclick="expand()"><i class="fa-solid fa-right-to-bracket"></i></button>
     </div>
-    <div class="main">
+    <div id="main" class="main">
         <h1 id="mainHeader" style="text-align: center; color: #fff;" class="mainHeader">Periodic Table</h1>
         <div class="table">
             <div class="tablehold">
@@ -119,18 +121,67 @@
                     <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">7</p><p class="atomicM">14.007</p></div><h5>N</h5>Nitrogen</button>
                 </div>
                 <div class="table2">
-                    <button class="ele Unknown"><div class="eleRow"><p class="atomicN">116</p><p class="atomicM">289</p></div><h5>Mc</h5>Moscovium</button>
-                    <button class="ele postTran"><div class="eleRow"><p class="atomicN">84</p><p class="atomicM">208.98</p></div><h5>Bi</h5>Bismuth</button>
+                    <button class="ele Unknown"><div class="eleRow"><p class="atomicN">116</p><p class="atomicM">293</p></div><h5>Lv</h5>Livermorium</button>
+                    <button class="ele postTran"><div class="eleRow"><p class="atomicN">84</p><p class="atomicM">209</p></div><h5>Po</h5>Polonium</button>
                     <button class="ele Metalloids"><div class="eleRow"><p class="atomicN">52</p><p class="atomicM">127.60</p></div><h5>Te</h5>Tellerium</button>
                     <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">34</p><p class="atomicM">78.960</p></div><h5>Se</h5>Selenium</button>
                     <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">16</p><p class="atomicM">32.065</p></div><h5>S</h5>Sulfur</button>
                     <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">8</p><p class="atomicM">15.999</p></div><h5>O</h5>Oxygen</button>
                 </div>
+                <div class="table2">
+                    <button class="ele Unknown"><div class="eleRow"><p class="atomicN">117</p><p class="atomicM">294</p></div><h5>Ts</h5>Tennessine</button>
+                    <button class="ele postTran"><div class="eleRow"><p class="atomicN">85</p><p class="atomicM">210</p></div><h5>At</h5>Astatine</button>
+                    <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">53</p><p class="atomicM">126.90</p></div><h5>I</h5>Iodine</button>
+                    <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">35</p><p class="atomicM">79.904</p></div><h5>Br</h5>Bromine</button>
+                    <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">17</p><p class="atomicM">35.453</p></div><h5>Cl</h5>Chlorine</button>
+                    <button class="ele reactiveN"><div class="eleRow"><p class="atomicN">9</p><p class="atomicM">18.998</p></div><h5>F</h5>Fluorine</button>
                 </div>
-                <div class="table4"></div>
+                <div class="table2">
+                    <button class="ele Unknown"><div class="eleRow"><p class="atomicN">118</p><p class="atomicM">294</p></div><h5>Og</h5>Oganesson</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">86</p><p class="atomicM">222</p></div><h5>Rn</h5>Radon</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">54</p><p class="atomicM">131.29</p></div><h5>Xe</h5>Xenon</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">36</p><p class="atomicM">83.798</p></div><h5>Kr</h5>Krypton</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">18</p><p class="atomicM">39.948</p></div><h5>Ar</h5>Argon</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">10</p><p class="atomicM">20.180</p></div><h5>Ne</h5>Neon</button>
+                    <button class="ele nobleG"><div class="eleRow"><p class="atomicN">2</p><p class="atomicM">4.0026</p></div><h5>He</h5>Helium</button>
+                </div>
+            </div>
+            <div class="table3Holder">
+                <div class="table3">
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">58</p><p class="atomicM">140.12</p></div><h5>Ce</h5>Cerium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">59</p><p class="atomicM">140.91</p></div><h5>Pr</h5>Praseodymium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">60</p><p class="atomicM">144.24</p></div><h5>Nd</h5>Neodymium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">61</p><p class="atomicM">145</p></div><h5>Pm</h5>Promethium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">62</p><p class="atomicM">150.36</p></div><h5>Sm</h5>Samarium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">63</p><p class="atomicM">151.96</p></div><h5>Eu</h5>Europium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">64</p><p class="atomicM">157.25</p></div><h5>Gd</h5>Gadolinium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">65</p><p class="atomicM">158.93</p></div><h5>Tb</h5>Terbium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">66</p><p class="atomicM">162.5</p></div><h5>Dy</h5>Dysprosium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">67</p><p class="atomicM">164.93</p></div><h5>Ho</h5>Holmium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">68</p><p class="atomicM">167.26</p></div><h5>Er</h5>Erbium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">69</p><p class="atomicM">168.93</p></div><h5>Tm</h5>Thulium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">70</p><p class="atomicM">173.04</p></div><h5>Yb</h5>Ytterbium</button>
+                    <button class="ele Lanth"><div class="eleRow"><p class="atomicN">71</p><p class="atomicM">174.97</p></div><h5>Lu</h5>Lutetium</button>
+                </div>
+                <div class="table3">
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">90</p><p class="atomicM">232.04</p></div><h5>Th</h5>Thorium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">91</p><p class="atomicM">231.04</p></div><h5>Pa</h5>Protactinium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">92</p><p class="atomicM">238.03</p></div><h5>U</h5>Uranium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">93</p><p class="atomicM">237.05</p></div><h5>Np</h5>Neptunium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">94</p><p class="atomicM">244</p></div><h5>Pu</h5>Plutonium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">95</p><p class="atomicM">243</p></div><h5>Am</h5>Americium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">96</p><p class="atomicM">247</p></div><h5>Cm</h5>Curium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">97</p><p class="atomicM">247</p></div><h5>Bk</h5>Berkelium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">98</p><p class="atomicM">251</p></div><h5>Cf</h5>Californium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">99</p><p class="atomicM">252</p></div><h5>Es</h5>Einsteinium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">100</p><p class="atomicM">257</p></div><h5>Fm</h5>Fermium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">101</p><p class="atomicM">258</p></div><h5>Md</h5>Mendelevium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">102</p><p class="atomicM">259</p></div><h5>No</h5>Nobelium</button>
+                    <button class="ele Acti"><div class="eleRow"><p class="atomicN">103</p><p class="atomicM">262</p></div><h5>Lr</h5>Lawrencium</button>
+                </div>
+            </div>
             </div>
         </div>
-    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>

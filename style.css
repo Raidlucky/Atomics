@@ -52,6 +52,7 @@ body {
     font-style: italic;
     font-size: 60px;
     color: #222222;
+    cursor: default;
 }
 
 .mainHeader::selection {
@@ -68,16 +69,25 @@ body {
     position: fixed;
 }
 
-.sidebar > a {
-    color: white;
+.sidebar > a, .sidebar > button {
+    display: flex;
+    flex-direction: row;
+    color: #bdbdbd;
+    text-align: left;
+    background-color: #fff0;
+    border: none;
     text-decoration: none;
     padding: 10px;
     font-family: 'roboto';
-    margin-inline: 10px;
+    margin-inline: auto;
+    width: 200px;
     border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-block: 10px;
 }
 
-.sidebar > a:hover {
+.sidebar > a:hover, .sidebar > button:hover {
 background-color: #474747;
 }
 
@@ -109,7 +119,7 @@ background-color: #474747;
 }
 
 .ele {
-    font-size: 9px;
+    font-size: 8px;
     text-align: center;
     padding: 7px;
     width: 65px;
@@ -212,6 +222,12 @@ background-color: #474747;
     background-color: #2f4d47a4;
 }
 
+.nobleG {
+    color: #ffe7eb;
+    border: solid 2px #623842;
+    background-color: #623842c0;
+}
+
 .themeBtn {
     background-color: #333;
     border: none;
@@ -227,4 +243,18 @@ background-color: #474747;
 .table2 {
     display: flex;
     flex-flow: column-reverse;
+}
+
+.table3 {
+    display: flex;
+    flex-direction: row;
+    margin-inline: auto;
+    width: 966px;
+}
+
+.table3Holder {
+    margin-top: 30px;
+    width: 970px;
+    margin-inline: auto;
+    padding-left: 165px;
 }
