@@ -258,3 +258,14 @@ background-color: #474747;
     margin-inline: auto;
     padding-left: 165px;
 }
+
+.sideInfo {
+    width: 330px;
+    position: fixed;
+    float: right;
+    height: 100%;
+    background-color: #fff;
+    margin-left: calc(100% - 330px);
+    text-align: center;
+    z-index: 2;
+}

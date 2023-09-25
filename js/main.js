@@ -55,3 +55,23 @@ function expand() {
     document.getElementById('history').style.width = '200px';
     document.getElementById('expand').style.display = 'none'
 }
+
+async function index(num) {
+    const request = new Request('../PeriodicTableJSON.json');
+    const response = await fetch(request);
+    const elements = await response.json();
+    insertJson(elements, num);
+}
+
+function insertJson(data, index) {
+    index = index-1
+    document.getElementById('element').innerHTML = JSON.stringify(data["elements"][index]["name"]).replace(/["]/g, '');
+    document.getElementById('category').innerHTML = `Atomic Group: ${JSON.stringify(data["elements"][index]["category"]).replace(/["]/g, '')}`;
+    document.getElementById('atomicNum').innerHTML = `Atomic Number: ${JSON.stringify(data["elements"][index]["number"])}`;
+    document.getElementById('symbol').innerHTML = `Atomic Symbol: ${JSON.stringify(data["elements"][index]["symbol"]).replace(/["]/g, '')}`;
+    document.getElementById('atomicMass').innerHTML = `Mass: ${JSON.stringify(data["elements"][index]["atomic_mass"])}`;
+    document.getElementById('melt').innerHTML = `Melting point: ${JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '')}`;
+    document.getElementById('Boil').innerHTML = `Boiling point: ${JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '')}`;
+    document.getElementById('discoverer').innerHTML = `Discovered by ${JSON.stringify(data["elements"][index]["discovered_by"]).replace(/["]/g, '')}`;
+
+}
