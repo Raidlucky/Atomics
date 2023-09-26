@@ -26,13 +26,13 @@ function mini() {
     mini.style.display = 'none';
     main.style.paddingLeft = '70px';
     document.getElementById('home').innerHTML = '<i class="fa-solid fa-house"></i>';
-    document.getElementById('home').style.width = '20px';
+    document.getElementById('home').style.width = '17px';
     document.getElementById('table').innerHTML = '<i class="fa-solid fa-atom"></i>';
-    document.getElementById('table').style.width = '20px';
+    document.getElementById('table').style.width = '17px';
     document.getElementById('info').innerHTML = '<i class="fa-solid fa-circle-info"></i>';
-    document.getElementById('info').style.width = '20px';
+    document.getElementById('info').style.width = '17px';
     document.getElementById('history').innerHTML = '<i class="fa-solid fa-landmark-dome"></i>';
-    document.getElementById('history').style.width = '20px';
+    document.getElementById('history').style.width = '17px';
     document.getElementById('expand').style.display = 'flex'
 }
 

@@ -142,7 +142,7 @@ background-color: #474747;
 
 .ele > h5, .eleDiv > h5 {
     margin-block: 3px;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .eleRow {
@@ -176,8 +176,8 @@ background-color: #474747;
 
 .alkalineEM {
     color: #ffe7e7;
-    background-color: #622e39bd;
-    border: solid 2px #622e39;
+    background-color: #622230a3;
+    border: solid 2px #622230;
 }
 
 .reactiveN {
@@ -295,7 +295,7 @@ background-color: #474747;
     font-size: 10.5px;
     text-align: center;
     width: 95% !important;
-    margin-inline: auto;
+    margin-top: 10px !important;
 }
 
 .SideClose {
