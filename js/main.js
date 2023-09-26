@@ -65,7 +65,7 @@ async function index(num) {
 
 function insertJson(data, index) {
     index = index-1;
-    document.getElementById('element').innerHTML = data["elements"][index]["name"].replace(/["]/g, '');
+    document.getElementById('element').innerHTML = JSON.parse(JSON.stringify(data["elements"][index]["name"])).replace(/["]/g, '');
     document.getElementById('elementH').innerHTML = data["elements"][index]["name"].replace(/["]/g, '');
     document.getElementById('category').innerHTML = `Atomic Group: ${data["elements"][index]["category"].replace(/["]/g, '')}`;
     document.getElementById('summary').innerHTML = data["elements"][index]["summary"].replace(/["]/g, '');
