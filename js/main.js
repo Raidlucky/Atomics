@@ -87,7 +87,6 @@ function insertJson(data, index) {
 function eleTheme(data, index) {
     let group = JSON.stringify(data["elements"][index-1]["category"]).replace(/["]/g, '');
     let display = document.getElementById('displayE');
-    console.log(group);
     if (group == 'diatomic nonmetal') {
         display.setAttribute('class', 'eleDiv reactiveN');
     } else if (group == 'alkali metal') {
