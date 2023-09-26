@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #square {
+  background-color: deeppink;
+  width: 100px;
+  height: 100px;
+  animation-name: rotateAnimation;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
+  animation-timeline: --squareTimeline;
+  position: absolute;
+  bottom: 0;
+}
+
+#stretcher {
+  height: 1900px;
+  background: #dedede;
+}
+
+#container {
+  height: 300px;
+  overflow-y: scroll;
+  scroll-timeline: --squareTimeline y;
+  /* Firefox supports the older "vertical" syntax */
+  scroll-timeline: --squareTimeline vertical;
+  position: relative;
+}
+
+
+@keyframes rotateAnimation {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(5);
+  }
+}
+
+    </style>
+    <div id="container">
+        <div id="square"></div>
+        <div id="stretcher"></div>
+      </div>
+      
+</body>
+</html>
