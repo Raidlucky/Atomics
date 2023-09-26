@@ -81,6 +81,13 @@ function insertJson(data, index) {
     document.getElementById('discoverer').innerHTML = `Discovered by ${data["elements"][index]["discovered_by"].replace(/["]/g, '')}`;
     document.getElementById('source').href = data["elements"][index]["source"].replace(/["]/g, '');
     document.getElementById('sideInfo').style.display = 'flex';
+    anime({
+        targets: '.sideInfo',
+        translateX: -330,
+        easing: 'easeInOutExpo',
+        delay: 0,
+        duration: 600
+    });
 }
 
 function eleTheme(data, index) {
@@ -111,6 +118,7 @@ function eleTheme(data, index) {
 
 function closeSide() {
     document.getElementById('sideInfo').style.display = 'none';
+    document.getElementById('sideInfo').style.transform = 'translateX(0px)'
 }
 
 mini()
