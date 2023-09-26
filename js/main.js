@@ -65,20 +65,20 @@ async function index(num) {
 
 function insertJson(data, index) {
     index = index-1;
-    document.getElementById('element').innerHTML = JSON.stringify(data["elements"][index]["name"]).replace(/["]/g, '');
-    document.getElementById('elementH').innerHTML = JSON.stringify(data["elements"][index]["name"]).replace(/["]/g, '');
-    document.getElementById('category').innerHTML = `Atomic Group: ${JSON.stringify(data["elements"][index]["category"]).replace(/["]/g, '')}`;
-    document.getElementById('summary').innerHTML = JSON.stringify(data["elements"][index]["summary"]).replace(/["]/g, '');
-    document.getElementById('atomicNum').innerHTML = `Atomic Number: ${JSON.stringify(data["elements"][index]["number"])}`;
-    document.getElementById('aNum').innerHTML = JSON.stringify(data["elements"][index]["number"]);
-    document.getElementById('symbol').innerHTML = `Atomic Symbol: ${JSON.stringify(data["elements"][index]["symbol"]).replace(/["]/g, '')}`;
-    document.getElementById('sym').innerHTML = JSON.stringify(data["elements"][index]["symbol"]).replace(/["]/g, '');
-    document.getElementById('atomicMass').innerHTML = `Mass: ${JSON.stringify(data["elements"][index]["atomic_mass"])}`;
-    document.getElementById('aM').innerHTML = Math.round(JSON.stringify(data["elements"][index]["atomic_mass"])*100)/100;
+    document.getElementById('element').innerHTML = data["elements"][index]["name"].replace(/["]/g, '');
+    document.getElementById('elementH').innerHTML = data["elements"][index]["name"].replace(/["]/g, '');
+    document.getElementById('category').innerHTML = `Atomic Group: ${data["elements"][index]["category"].replace(/["]/g, '')}`;
+    document.getElementById('summary').innerHTML = data["elements"][index]["summary"].replace(/["]/g, '');
+    document.getElementById('atomicNum').innerHTML = `Atomic Number: ${data["elements"][index]["number"]}`;
+    document.getElementById('aNum').innerHTML = data["elements"][index]["number"];
+    document.getElementById('symbol').innerHTML = `Atomic Symbol: ${data["elements"][index]["symbol"].replace(/["]/g, '')}`;
+    document.getElementById('sym').innerHTML = data["elements"][index]["symbol"].replace(/["]/g, '');
+    document.getElementById('atomicMass').innerHTML = `Mass: ${data["elements"][index]["atomic_mass"]}`;
+    document.getElementById('aM').innerHTML = Math.round((data["elements"][index]["atomic_mass"])*100)/100;
     document.getElementById('melt').innerHTML = `Melting point: ${JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '')}`;
     document.getElementById('Boil').innerHTML = `Boiling point: ${JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '')}`;
-    document.getElementById('discoverer').innerHTML = `Discovered by ${JSON.stringify(data["elements"][index]["discovered_by"]).replace(/["]/g, '')}`;
-    document.getElementById('source').href = JSON.stringify(data["elements"][index]["source"]).replace(/["]/g, '');
+    document.getElementById('discoverer').innerHTML = `Discovered by ${data["elements"][index]["discovered_by"].replace(/["]/g, '')}`;
+    document.getElementById('source').href = data["elements"][index]["source"].replace(/["]/g, '');
     document.getElementById('sideInfo').style.display = 'flex';
     document.getElementById('main').style.paddingRight = '330px';
 }

@@ -315,3 +315,12 @@ background-color: #474747;
 .SideClose:hover {
     border: solid 1px #333;
 }
+
+.spacer {
+    display: block;
+    border-radius: 5px;
+    background-color: #333;
+    width: 95%;
+    height: 1px;
+    margin-inline: auto;
+}
