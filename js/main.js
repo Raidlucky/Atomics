@@ -57,10 +57,11 @@ function expand() {
 }
 
 async function index(num) {
-    const request = new Request('https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json');
+    const request = new Request('https://raw.githubusercontent.com/Raidlucky/Atomics/main/PeriodicTableJSON.json');
     const response = await fetch(request);
     const elements = await response.json();
     insertJson(elements, num);
+    eleTheme(elements, num);
 }
 
 function insertJson(data, index) {
@@ -81,6 +82,33 @@ function insertJson(data, index) {
     document.getElementById('source').href = data["elements"][index]["source"].replace(/["]/g, '');
     document.getElementById('sideInfo').style.display = 'flex';
     document.getElementById('main').style.paddingRight = '330px';
+}
+
+function eleTheme(data, index) {
+    let group = JSON.stringify(data["elements"][index-1]["category"]).replace(/["]/g, '');
+    let display = document.getElementById('displayE');
+    console.log(group);
+    if (group == 'diatomic nonmetal') {
+        display.setAttribute('class', 'eleDiv reactiveN');
+    } else if (group == 'alkali metal') {
+        display.setAttribute('class', 'eleDiv alkaliM');
+    } else if (group == 'alkaline earth metal') {
+        display.setAttribute('class', 'eleDiv alkalineEM');
+    } else if (group == 'transition metal') {
+        display.setAttribute('class', 'eleDiv transitionM');
+    } else if (group == 'lanthanide') {
+        display.setAttribute('class', 'eleDiv Lanth');
+    } else if (group == 'actinide') {
+        display.setAttribute('class', 'eleDiv Acti');
+    } else if (group == 'metalloid') {
+        display.setAttribute('class', 'eleDiv Metalloids');
+    } else if (group == 'post-transition metal') {
+        display.setAttribute('class', 'eleDiv postTran');
+    } else if (group == 'noble gas') {
+        display.setAttribute('class', 'eleDiv nobleG');
+    } else if (group == 'unknown') {
+        display.setAttribute('class', 'eleDiv Unknown');
+    }
 }
 
 function closeSide() {
