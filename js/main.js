@@ -44,6 +44,7 @@ async function index(num) {
     const elements = await response.json();
     insertJson(elements, num);
     eleTheme(elements, num);
+    nullCheck(elements, num)
 }
 
 function insertJson(data, index) {
@@ -55,11 +56,12 @@ function insertJson(data, index) {
     document.getElementById('atomicNum').innerHTML = `Atomic Number: ${data["elements"][index]["number"]}`;
     document.getElementById('aNum').innerHTML = data["elements"][index]["number"];
     document.getElementById('symbol').innerHTML = `Atomic Symbol: ${data["elements"][index]["symbol"].replace(/["]/g, '')}`;
+    document.getElementById('protons').innerHTML = `Protons: ${data["elements"][index]["number"]}`;
+    document.getElementById('neutrons').innerHTML = `Neutrons: ${Math.round((data["elements"][index]["atomic_mass"])-(data["elements"][index]["number"]))}`;
+    document.getElementById('electrons').innerHTML = `Electrons: ${data["elements"][index]["number"]}`;
     document.getElementById('sym').innerHTML = data["elements"][index]["symbol"].replace(/["]/g, '');
     document.getElementById('atomicMass').innerHTML = `Mass: ${data["elements"][index]["atomic_mass"]}`;
     document.getElementById('aM').innerHTML = Math.round((data["elements"][index]["atomic_mass"])*100)/100;
-    document.getElementById('melt').innerHTML = `Melting point: ${JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '')}`;
-    document.getElementById('Boil').innerHTML = `Boiling point: ${JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '')}`;
     document.getElementById('discoverer').innerHTML = `Discovered by ${data["elements"][index]["discovered_by"].replace(/["]/g, '')}`;
     document.getElementById('source').href = data["elements"][index]["source"].replace(/["]/g, '');
     document.getElementById('sideInfo').style.display = 'flex';
@@ -96,6 +98,23 @@ function eleTheme(data, index) {
     } else if (group == 'unknown') {
         display.setAttribute('class', 'eleDiv Unknown');
     }
+}
+
+function nullCheck(data, index) {
+    let melt = JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '');
+    let boil = JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '');
+    console.log(melt, boil)
+    if (melt == 'null') {
+        document.getElementById('melt').innerHTML = 'Melting point: Unknown';
+    } else {
+        document.getElementById('melt').innerHTML = `Melting point: ${melt}`;
+    }
+    if (boil == 'null') {
+        document.getElementById('Boil').innerHTML = 'Boiling point: Unknown';
+    } else {
+        document.getElementById('Boil').innerHTML = `Boiling point: ${boil}`;
+    }
+    
 }
 
 function closeSide() {
