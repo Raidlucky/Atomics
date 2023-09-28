@@ -107,12 +107,12 @@ function nullCheck(data, index) {
     if (melt == 'null') {
         document.getElementById('melt').innerHTML = 'Melting point: Unknown';
     } else {
-        document.getElementById('melt').innerHTML = `Melting point: ${melt}`;
+        document.getElementById('melt').innerHTML = `Melting point: ${melt}°F`;
     }
     if (boil == 'null') {
         document.getElementById('Boil').innerHTML = 'Boiling point: Unknown';
     } else {
-        document.getElementById('Boil').innerHTML = `Boiling point: ${boil}`;
+        document.getElementById('Boil').innerHTML = `Boiling point: ${boil}°F`;
     }
     
 }
