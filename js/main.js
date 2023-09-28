@@ -44,7 +44,10 @@ async function index(num) {
     const elements = await response.json();
     insertJson(elements, num);
     eleTheme(elements, num);
-    nullCheck(elements, num)
+    nullCheck(elements, num);
+    if (window.screen.width > 1670) {
+        main.style.paddingRight = '330px';
+    }
 }
 
 function insertJson(data, index) {
@@ -103,7 +106,6 @@ function eleTheme(data, index) {
 function nullCheck(data, index) {
     let melt = JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '');
     let boil = JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '');
-    console.log(melt, boil)
     if (melt == 'null') {
         document.getElementById('melt').innerHTML = 'Melting point: Unknown';
     } else {
@@ -120,6 +122,7 @@ function nullCheck(data, index) {
 function closeSide() {
     document.getElementById('sideInfo').style.display = 'none';
     document.getElementById('sideInfo').style.transform = 'translateX(0px)';
+    main.style.paddingRight = '0px';
 }
 
 mini();
