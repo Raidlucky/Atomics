@@ -104,16 +104,18 @@ function eleTheme(data, index) {
 }
 
 function nullCheck(data, index) {
-    let melt = JSON.stringify(data["elements"][index]["melt"]).replace(/["]/g, '');
-    let boil = JSON.stringify(data["elements"][index]["boil"]).replace(/["]/g, '');
+    let melt = JSON.stringify(data["elements"][index-1]["melt"]).replace(/["]/g, '');
+    let boil = JSON.stringify(data["elements"][index-1]["boil"]).replace(/["]/g, '');
     if (melt == 'null') {
         document.getElementById('melt').innerHTML = 'Melting point: Unknown';
     } else {
+        melt = Math.round(((melt - 273.15) * 1.8 + 32)*100)/100;
         document.getElementById('melt').innerHTML = `Melting point: ${melt}°F`;
     }
     if (boil == 'null') {
         document.getElementById('Boil').innerHTML = 'Boiling point: Unknown';
     } else {
+        boil = Math.round(((boil - 273.15) * 1.8 + 32)*100)/100; 
         document.getElementById('Boil').innerHTML = `Boiling point: ${boil}°F`;
     }
     
