@@ -137,8 +137,9 @@ background-color: #474747;
 }
 
 .ele:hover {
-    transform: scale(1.4);
+    transform: scale(1.6);
     cursor: pointer;
+    backdrop-filter: blur(3px);
 }
 
 .ele > h5, .eleDiv > h5 {
