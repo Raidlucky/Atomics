@@ -127,4 +127,18 @@ function closeSide() {
     main.style.paddingRight = '0px';
 }
 
-mini();
+function load() {
+    anime({
+        targets: '.ele',
+        translateX: ['-200px', '0px'],
+        delay: anime.stagger(5) 
+    });
+
+    setTimeout(() => {
+        for (i=0; i < document.querySelectorAll('.ele').length;i++) {
+            document.querySelectorAll('.ele')[i].style = '';
+        }
+      }, 2000);      
+}
+
+load();mini();
