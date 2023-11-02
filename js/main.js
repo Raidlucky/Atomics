@@ -127,7 +127,7 @@ function closeSide() {
     main.style.paddingRight = '0px';
 }
 
-function load() {
+/*function load() {
     anime({
         targets: '.ele',
         translateX: ['-200px', '0px'],
@@ -141,4 +141,4 @@ function load() {
       }, 2000);      
 }
 
-load();mini();
+load();*/mini();
